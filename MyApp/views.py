@@ -68,7 +68,9 @@ def buscar(request):
         nombre = request.GET['nombre'] 
         videojuego = Videojuego.objects.filter(nombre__icontains=nombre)
         return render(request, "MyApp/inicio.html", {"videojuego":videojuego, "nombre":nombre})
-    return render(request, "MyApp/inicio.html"  )
+    else:
+        respuesta= "No enviaste ningún valor"
+    return render(request, "MyApp/inicio.html", {'respuesta':respuesta})
 
 class CambioPass(PasswordChangeView):
     form_class = FormularioCambioPass
