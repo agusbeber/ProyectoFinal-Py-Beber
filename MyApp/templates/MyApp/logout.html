@@ -7,9 +7,12 @@
         width: 100%;
         }
 </style>
-<div class="container text-center" style="margin-top: 300px; margin-bottom: 320px;">
+<div class="container text-center" style="margin-top: 300px;">
     <h1>Cerraste la sesión</h1>
-    <p>¿Querés <a href="{% url 'Login' %}" style="text-decoration: none;">iniciar sesión </a>de nuevo?</p>
+    <div class="container">
+        <h4 class="text-center text-muted">Muchas gracias por visitar mi página</h4>
+    </div>
+    <a class="btn btn-outline-dark" style="margin-top: 15px; width: 150px;" href="{% url 'Login' %}">Salir</a>
 </div>
 
 {% endblock %}

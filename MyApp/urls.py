@@ -9,16 +9,18 @@ urlpatterns = [
 
     path('login', views.login_request, name="Login"),
     path('register', Signup.as_view(), name='Register'),
-    path('logout', LogoutView.as_view(template_name='MyApp/logout.html'), name='Logout'),
-    path('editarPerfil', UsuarioEdicion.as_view(), name='EditarPerfil'),
     path('cambioPass/', CambioPass.as_view(), name='cambioPass'),
     path('cambioPassOk/' , views.pass_ok, name='passOk'),
     path('olvidePass/' , views.olvidePass, name='olvidePass'),
-    path('contacto/' , views.contacto, name='contacto'),
-    path('contactoOk/' , views.contactoOk, name='contactoOk'),
     path('comentarioOk/' , views.comentarioOk, name='comentarioOk'),
 
+    path('logout', LogoutView.as_view(template_name='MyApp/logout.html'), name='Logout'),
+    path('notif', views.notif, name='Notif'),
+    path('editarPerfil', UsuarioEdicion.as_view(), name='EditarPerfil'),
+
     path('about/', views.about, name='About'),
+    path('contacto/' , views.contacto, name='contacto'),
+    path('contactoOk/' , views.contactoOk, name='contactoOk'),
 
 #  Subir Juego
     path('videojuegoCreacion/', VideojegoCreacion.as_view(), name='Crear'),

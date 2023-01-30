@@ -260,6 +260,9 @@ class ComentarioPagina(LoginRequiredMixin, CreateView):
 def comentarioOk(request):
     return render(request, 'MyApp/comentarioOk.html', {})
 
+def notif(request):
+    return render(request, 'MyApp/notif.html', {})
+
 # ABOUT
 def about(request):
     return render(request, 'MyApp/about.html', {})
