@@ -41,3 +41,6 @@ Discramer: La página NO está pensada para el uso en versión responsive.
 ##### Back-End
 - Python
 - Django
+
+## Casos de Prueba
+Dentro del repositorio se encuentra el archivo Casos de Uso - Python.xlsx que contiene los casos de uso y sus resultados.
