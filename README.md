@@ -32,7 +32,7 @@ Los usuarios pueden realizar las siguientes acciones:
 
 Discramer: La página NO está pensada para el uso en versión responsive.
 
-## Tecnologías
+## Tecnologías Utilizadas
 ##### Front-End
 - HTML
 - CSS
