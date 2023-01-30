@@ -1,0 +1,21 @@
+{% extends "MyApp/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<div class="container" style="margin-top: 300px; margin-bottom: 300px;">
+    <h1>!Bienvenido a WolfGames!</h1>
+    <h3>Obtené información sobre tu videojuego favorito</h3>
+    <form action="/MyApp/buscar/" method="GET">
+        <input type="text" name="nombre" id="juego" style="width: 500px; height: 47px; border-radius: 10px;">
+        <input type="submit" class="btn btn-outline-dark" value="Buscar" style="border-radius: 10px;">
+    </form>
+    {% if videojuego %}
+        <h4 style="margin-top: 50px; margin-bottom: 20px;">Juegos que coinciden con " {{nombre}} "</h4>
+            <ul>
+            {% for videojuego in videojuego %}
+                <p >El <b>{{videojuego.nombre}}</b> es un título desarrollado por {{videojuego.creador}} y publicado en el año {{videojuego.lanzamiento}}.
+                </br>Para mas información, visite la solapa correspondiente a la categoría {{videojuego.genero}}.</p>
+            {% endfor %}
+            </ul>
+    {% endif %}
+</div>
+{% endblock %}

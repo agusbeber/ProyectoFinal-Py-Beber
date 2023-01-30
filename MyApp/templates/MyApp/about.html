@@ -1,0 +1,42 @@
+{% extends 'MyApp/padre.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+</style>
+
+    <div class="container">
+        <h2 class="text-center text-dark" style="margin-top: 65px; color:rgb(27, 32, 48)">¿Quién Soy?</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card" style="background: rgb(27, 32, 48); border-radius: 45px; box-shadow: 10px 10px 40px rgb(26, 26, 26);">
+                    <div class="card-body text-center" style="color: lightseagreen;">
+                        <img src="{% static '/MyApp/assets/perfil.jpg' %}" style="border-color: rgb(27, 32, 48); border-radius: 45px; margin-bottom: 35px; margin-top: 20px; box-shadow: 10px 10px 40px rgb(0, 0, 0);" width="200px" onmouseover="this.style.transform='scale(1.2)';" onmouseleave="this.style.transform='scale(1)'">
+                        <h2 class="card-title mb-3">Agustín Beber</h2>
+                        <p class="card-text">Python Developer Jr.</p>
+                        <p class="card-text">Data Analyst Jr.</p>
+                        <p class="card-text"><small>Seguime en:</small></p>
+                        <a href="https://github.com/agusbeber" target="_blank"><i class="bi-github fs-3" style="color:lightseagreen; margin-right: 15px;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"></i></a>
+                        <a href="https://www.linkedin.com/in/agustin-beber-769986194/" target="_blank"><i class="bi-linkedin fs-3" style="color:lightseagreen" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"></i></a>
+                        <a href="https://www.instagram.com/beberagus/" target="_blank"><i class="bi-instagram fs-3" style="color:lightseagreen; margin-left: 15px;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div style="margin-top: 30px; color: rgb(27, 32, 48); font-size: 20px; margin-left: 40px;">
+                        <p>¡Hola! Mi nombre es Agustín, tengo 24 años y llevo mas de 3 trabajando en el área de IT, tomando cargos como Project Owner y Support Analyst.
+                            Esta página web es el proyecto final del curso de programación en lenguaje Python (Utilizando como framework Django) que realicé de la mano de CoderHouse. Previo a éste, ya obtuve mi certificado por completar el curso de Data Analytics en el que obtuve conociemientos acerca de SQL, que me fueron de utilidad para este proyecto.
+                            <br>Esta página refleja mi gusto tanto por la programación, como por los videojuegos, espero que te guste y muchas gracias por visitarla!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

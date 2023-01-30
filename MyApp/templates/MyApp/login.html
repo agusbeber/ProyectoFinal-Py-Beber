@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/wolf-icon-18-256.png">
+    <title>WolfGames</title>
+</head>
+<body style="font-family: sans-serif; background: linear-gradient(90deg, rgb(27, 32, 48), lightseagreen); padding: 0; margin: 0; padding: 15px; flex: auto;">
+    <div class="container" style="min-height: calc(100vh - 40px * 2); display: grid; grid-template-columns: 50% 50%; border-radius: 15px; overflow: hidden;">
+        <div class="login-left" style="display: flex; justify-content: content; flex-direction: column; padding-left: 100px; padding-right: 50px; background-color: white;">
+            <div class="login-header" style="margin-bottom: 50px;">
+                <h1 style="font-size: 27px; margin-bottom: 10px; margin-top: 40px;">BIENVENIDO A WOLFGAMES</h1>
+                <p style="opacity: .7;">
+                    Por favor, ingresá tus datos para acceder a la plataforma.
+                </p>
+            </div>
+            <form class="login-form" style="width: 570px;" method="post">
+                {% csrf_token %}
+                <div class="login-form-content" style="display: flex; flex-direction: column; gap: 45px; margin-left: 75px;">
+                    <div class="form-item">
+                        <label for="username" style="display: inline-block; background-color: white; margin-bottom: 10px; position: absolute; padding: 0 1%; transform: translate(30px, -10px); font-size: 14px;">Usuario</label>
+                        <input style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 100px;" type="text" name="username" required>
+                    </div>
+                    <div class="form-item" style="display: inline-block; background-color: white;">
+                        <label for="password" style="display: inline-block; background-color: white; margin-bottom: 10px; position: absolute; padding: 0 1%; transform: translate(30px, -10px); font-size: 14px;">Contraseña</label>
+                        <input style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 100px;" type="password" name="password" required>
+                    </div>
+                    </style>
+                    <br><input type="submit" value="Iniciar Sesión" style="border: none; background: linear-gradient(90deg, rgb(27, 32, 48), lightseagreen); color: white; padding: 1rem; border-radius: 100px; text-align: center; font-size: 18px; height: 55px; cursor: pointer; margin-left: 75px;"></input>
+                    {% if error %}
+                        <p style="font-size: 20px; margin-top: 40px; margin-left: 32%; color: rgb(185, 37, 37);">{{ error }}</p>
+                    {% endif %}
+                    <div class="signup-password" style="font-size: 13px; margin-top: 40px;">
+                        <a href="{% url 'olvidePass' %}" style="margin-left: 45%;">Olvidé mi contraseña</a>
+                        <p style="margin-left: 40%;">¿No tenés cuenta? <a href="{% url 'Register' %}">Registrate</a>!</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="login-right" style="background-color: rgb(27, 32, 48); display: flex; justify-content: center;">
+            <img src="\static\MyApp\assets\wolf.png" style="scale: 75%;">
+        </div>
+    </div>
+</body>
+</html>

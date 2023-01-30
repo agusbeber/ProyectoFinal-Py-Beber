@@ -1,0 +1,18 @@
+{% extends 'MyApp/padre.html' %}
+{% block contenidoQueCambia %}
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+</style>
+<div class="container text-center" style="margin-top: 300px; margin-bottom: 320px;">
+    <h1>Tu mensaje ha sido enviado con éxito!</h1>
+    <div class="container" style="margin-bottom: 20px;">
+        <h4 class="text-center text-muted">Voy a intentar contactarme a la brevedad</h4>
+    </div>
+    <a href="{% url 'Inicio' %}" style="text-decoration: none;">Volver al inicio</a>
+</div>
+
+{% endblock %}

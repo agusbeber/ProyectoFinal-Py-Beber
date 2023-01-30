@@ -1,0 +1,62 @@
+{% extends 'MyApp/padre.html' %}
+{% block contenidoQueCambia %}
+<style>
+    img {
+    max-width: 400px;
+    }
+</style>
+    <div class="container">
+        <p>
+            <h2>
+                <div class="container text-center" style="margin-top: 50px;">
+                        {{estrategia.nombre}}
+                </div>
+            </h2>
+            <div class="container text-center">
+                {% if user.id == estrategia.usuario.id %}
+                    <a href="{% url 'editarEstrategia' estrategia.id %}"><i class="bi bi-pencil-fill fs-5" style="color: rgb(42, 133, 128);" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"></i></a>
+                    <a href="{% url 'eliminarEstrategia' estrategia.id %}"><i class="bi bi-trash-fill text-danger fs-5" style="margin-left: 10px;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'"></i></a>
+                {% endif %}
+            </div>
+        </p>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                    <div class="card-body text-center" style="color: lightseagreen;">
+                        {% if estrategia.imagenVideojuego %}
+                            <img src="{{estrategia.imagenVideojuego.url}}" style="border-radius: 30px; box-shadow: 10px 10px 40px #333;"></p>
+                        {% else %}
+                            <img src="/static/MyApp/assets/notfound.jpg" style="border-radius: 30px; box-shadow: 10px 10px 40px #333;"></p>
+                        {% endif %}
+                    </div>
+            </div>
+            <div class="col">
+                <div style="margin-top: 30px; color: rgb(27, 32, 48); font-size: 17px; margin-left: 200px;">
+                    <p><b>Desarrollador:</b> {{estrategia.creador}}</br></p>
+                    <p><b>Descripción:</b> {{estrategia.descripcion}}</br></p>
+                    <p><b>Lanzamiento:</b> {{estrategia.lanzamiento}}</br></p>
+                    <p><b>Precio:</b> AR${{estrategia.precio}}</br></p>
+                    <p><b>Teléfono de Contacto:</b> {{estrategia.telefonoContacto}}</br></p>
+                    <p><b>Email de Contacto:</b> {{estrategia.emailContacto}}</br></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <hr>
+            <h4 style="margin-top: 30px;">Comentarios</h4>
+            <br>
+            <div class="container">
+                {% if not estrategia.comentarios.all %}
+                        <h5 style="margin-bottom: 30px; color: rgb(80, 80, 80);">No hay comentarios acerca de este juego.</h5>
+                    {% else %}
+                        {% for comentario in estrategia.comentarios.all %}
+                            <p><i class="bi bi-chat" style="color:rgb(27, 32, 48); margin-right: 5px;"></i> <strong>{{comentario.nombre}}</strong> (<small>{{comentario.fechaComentario}}</small>): <i>" {{comentario.mensaje}} "</i></p>
+                        {% endfor %}
+                {% endif %}
+            <div style="margin-bottom: 30px;">
+                <a class="navbar-brand"href="{% url 'comentario' estrategia.pk %}">Comentar</a>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

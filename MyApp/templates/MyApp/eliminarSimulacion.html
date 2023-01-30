@@ -1,0 +1,26 @@
+{% extends 'MyApp/padre.html' %}
+{% block contenidoQueCambia %}
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+</style>
+{% if user.id == simulacion.usuario.id %}
+<div class="container text-center" style="margin-top: 250px; margin-bottom: 300px;">
+    <form method="post">{% csrf_token %}
+        <h4>Estás seguro que deseas elimnar</h4><br>
+        <h1>{{simulacion.nombre}}</h1>
+        <p style="margin-top: 40px;">
+            <a class="btn btn-outline-dark" href="{% url 'Simulacion' %}">Volver</a>
+            <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+        </p>
+    </form>
+</div>
+{% else %}
+<div class="container">
+    <h4>Acceso a esta página denegado</h4>
+</div>
+{% endif %}
+{% endblock %}

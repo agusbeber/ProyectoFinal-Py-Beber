@@ -1,0 +1,22 @@
+{% extends 'MyApp/padre.html' %}
+{% block contenidoQueCambia %}
+<br>
+<br>
+<div class="container">
+    <h1 class="text-center" style="margin-bottom: 40px;">Agregá un nuevo videojuego</h1>
+    <div class="form-group">
+        <form style=" width: 45vw; margin-left : 12vw;" method="post" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <div class="container text-center">
+                <button type="submit" class="btn btn-outline-dark" style="margin-bottom: 20px; margin-top: 30px; width: 200px;">Agregar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("usuario_id").value = name;
+</script>
+{% endblock %}

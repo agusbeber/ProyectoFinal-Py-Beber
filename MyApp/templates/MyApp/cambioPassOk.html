@@ -1,0 +1,15 @@
+{% extends 'MyApp/padre.html' %}
+{% block contenidoQueCambia %}
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+</style>
+<div class="container text-center" style="margin-top: 300px; margin-bottom: 320px;">
+    <h1>Contraseña modificada correctamente</h1>
+    <a href="{% url 'Inicio' %}" style="text-decoration: none;">Volver</a>
+</div>
+
+{% endblock %}

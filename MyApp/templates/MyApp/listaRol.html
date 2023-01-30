@@ -1,0 +1,51 @@
+{% extends 'MyApp/padre.html' %}
+{% block contenidoQueCambia %}
+<style>
+    img {
+    max-width: 300px;
+    }
+</style>
+<br>
+<br>
+<div class="container text-center">
+    {% if rol%}
+        <h1 style="margin-bottom: 40px;">Videojuegos de Rol</h1>
+    {% endif %}
+</div>
+<br>
+<div class="container text-center">
+    <div class="row">
+            {% if rol%}
+                {% for rol in rol %}
+                <style>
+                    footer {
+                        margin-top: 150px;
+                        width: 100%;
+                }
+                </style>
+                <div class="col-sm-4 align-items-center">
+                    <h4 style="color: rgb(64, 74, 83);">
+                        {{rol.nombre}}
+                    </h4>
+                    <div class="card-body">
+                        {% if rol.imagenVideojuego %}
+                            <a href="{% url 'detalleRol' rol.id %}"><img src="{{rol.imagenVideojuego.url}}" class="" width="300px" style="margin-bottom: 30px; border-radius: 30px; box-shadow: 20px 20px 40px #333;" onmouseover="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='scale(1)'"></a>
+                        {% else %}
+                            <a href="{% url 'detalleRol' rol.id %}"><img src="/static/MyApp/assets/notfound.jpg" class="" width="300px" style="margin-bottom: 30px; border-radius: 30px; box-shadow: 20px 20px 40px #333;" onmouseover="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='scale(1)'"></a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <h1 class="container" style="margin-top: 282px; margin-bottom: 282px;">No hay juegos cargados para la categoría rol</p>
+                <style>
+                    footer {
+                        position: fixed;
+                        bottom: 0;
+                        width: 100%;
+                        }
+                </style>
+            {% endif %}
+    </div>
+</div>
+{% endblock %}
