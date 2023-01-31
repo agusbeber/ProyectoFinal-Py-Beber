@@ -8,6 +8,16 @@ Librería de videojuegos
 ## Versión
 1.0
 
+## Tecnologías Utilizadas
+##### Front-End
+- HTML
+- CSS
+- Bootstrap
+
+##### Back-End
+- Python
+- Django
+
 ## Descripción del Proyecto
 Página web destinada a todos los usuarios que deseen buscar información sobre algún videojuego, ya sea precios, su desarrolladora, o mismo una breve descripción. A su vez, se le permitirá comentarlos para así generar una interacción con otros usuarios y saber más sobre la opinión general.
 
@@ -28,19 +38,12 @@ Los usuarios pueden realizar las siguientes acciones:
 * Eliminar la publicación (Solo permitido por el usuario que haya hecho la publicación)
 * Ingresar a "About", donde se encuentra la información del owner de la página
 * Simular contactar al owner de la página
+* Simular un apartado de notificaciones
 * Cerrar sesión
 
 Discramer: La página NO está pensada para el uso en versión responsive.
 
-## Tecnologías Utilizadas
-##### Front-End
-- HTML
-- CSS
-- Bootstrap
-
-##### Back-End
-- Python
-- Django
-
 ## Casos de Prueba
 Dentro del repositorio se encuentra el archivo [Casos de Uso - Python.xlsx] que contiene los casos de uso y sus resultados.
+
+## Video demostrativo

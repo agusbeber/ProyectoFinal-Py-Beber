@@ -9,20 +9,20 @@
     <div class="form-group">
         <form id="login-form" style=" width: 45vw; margin-left : 12vw;">
             <br>
-            <div class="form-item" style="margin-bottom: 50px;">
+            <div class="form-item" style="margin-bottom: 50px;" >
                 <label for="username" style="display: inline-block; background-color: white; margin-bottom: 10px; position: absolute; padding: 0 1%; transform: translate(30px, -30px); font-size: 16px;"><b>Nombre</b></label>
-                <input style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 10px;" type="text" name="username" required>
+                <input style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 10px;" type="text" value="{{user.first_name}} {{user.last_name}}">
             </div>
             <div class="form-item" style="margin-bottom: 50px;">
                 <label for="email" style="display: inline-block; background-color: white; margin-bottom: 10px; position: absolute; padding: 0 1%; transform: translate(30px, -30px); font-size: 16px;"><b>Email</b></label>
-                <input style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 10px;" type="email" name="email" required>
+                <input style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 10px;" type="email" value="{{user.email}}">
             </div>
             <div class="form-item" style="margin-bottom: 50px;">
                 <label for="text" style="display: inline-block; background-color: white; margin-bottom: 10px; position: absolute; padding: 0 1%; transform: translate(30px, -30px); font-size: 16px;"><b>Mensaje</b></label>
-                <textarea style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 10px;" type="text" name="message" required></textarea>
+                <textarea style="border: 1px solid black; height: 55px; padding: 0 2rem; width: 100%; outline: none; transition: background .5s; font-size: 18px; border-radius: 10px;" type="text" placeholder="Ingrese su mensaje"></textarea>
             </div>
             <div class="container text-center">
-                <a href="{% url 'contactoOk' %}" class="btn btn-outline-dark" style="margin-top: 20px; margin-bottom: 150px;">Enviar</a>
+                <a href="{% url 'contactoOk' %}" class="btn btn-outline-dark" style="margin-top: 20px; margin-bottom: 150px; width: 200px;">Enviar</a>
             </div>
         </form>
     </div>

@@ -5,14 +5,14 @@
     <h1>!Bienvenido a WolfGames!</h1>
     <h3>Obtené información sobre tu videojuego favorito</h3>
     <form action="/MyApp/buscar/" method="GET">
-        <input type="text" name="nombre" id="juego" style="width: 500px; height: 47px; border-radius: 10px;">
-        <input type="submit" class="btn btn-outline-dark" value="Buscar" style="border-radius: 10px;">
+        <input type="text" name="nombre" id="juego" style="width: 500px; height: 47px; border-radius: 7px;" placeholder="Ingresá el nombre de un videojuego">
+        <button type="submit" class="btn btn-outline-dark" style="border-radius: 7px; height: 47px; margin-left: 3px;"><i class="bi bi-search"></i></button>        
     </form>
     {% if videojuego %}
         <h4 style="margin-top: 50px; margin-bottom: 20px;">Juegos que coinciden con " {{nombre}} "</h4>
             <ul>
             {% for videojuego in videojuego %}
-                <p >El <b>{{videojuego.nombre}}</b> es un título desarrollado por {{videojuego.creador}} y publicado en el año {{videojuego.lanzamiento}}.
+                <p >El <b>{{videojuego.nombre.title}}</b> es un título desarrollado por {{videojuego.creador.title}} y publicado en el año {{videojuego.lanzamiento}}.
                 </br>Para mas información, visite la solapa correspondiente a la categoría {{videojuego.genero}}.</p>
             {% endfor %}
             </ul>
