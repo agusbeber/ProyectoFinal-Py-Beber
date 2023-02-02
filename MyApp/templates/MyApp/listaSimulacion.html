@@ -29,9 +29,9 @@
                     </h4>
                     <div class="card-body">
                         {% if simulacion.imagenVideojuego %}
-                            <a href="{% url 'detalleSimulacion' simulacion.id %}"><img src="{{simulacion.imagenVideojuego.url}}" class="" width="300px" style="margin-bottom: 30px; border-radius: 30px; box-shadow: 20px 20px 40px #333;" onmouseover="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='scale(1)'"></a>
+                            <a href="{% url 'detalleSimulacion' simulacion.id %}"><img src="{{simulacion.imagenVideojuego.url}}" class="" width="250px" style="margin-bottom: 30px; border-radius: 30px; box-shadow: 20px 20px 40px #333;" onmouseover="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='scale(1)'"></a>
                         {% else %}
-                            <a href="{% url 'detalleSimulacion' simulacion.id %}"><img src="/static/MyApp/assets/notfound.jpg" class="" width="300px" style="margin-bottom: 30px; border-radius: 30px; box-shadow: 20px 20px 40px #333;" onmouseover="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='scale(1)'"></a>
+                            <a href="{% url 'detalleSimulacion' simulacion.id %}"><img src="/static/MyApp/assets/notfound.jpg" class="" width="250px" style="margin-bottom: 30px; border-radius: 30px; box-shadow: 20px 20px 40px #333;" onmouseover="this.style.transform='scale(1.05)';" onmouseleave="this.style.transform='scale(1)'"></a>
                         {% endif %}
                     </div>
                 </div>

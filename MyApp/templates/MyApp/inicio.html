@@ -12,8 +12,21 @@
         <h4 style="margin-top: 50px; margin-bottom: 20px;">Juegos que coinciden con " {{nombre}} "</h4>
             <ul>
             {% for videojuego in videojuego %}
-                <p >El <b>{{videojuego.nombre.title}}</b> es un título desarrollado por {{videojuego.creador.title}} y publicado en el año {{videojuego.lanzamiento}}.
-                </br>Para mas información, visite la solapa correspondiente a la categoría {{videojuego.genero}}.</p>
+                <p >El <b style="font-size: 17px;">{{videojuego.nombre.title}}</b> es un título desarrollado por <b>{{videojuego.creador.title}}</b> y publicado en el año {{videojuego.lanzamiento}}.
+                </br>Para mas información, visite la categoría 
+                {% if videojuego.genero == "accion" %}
+                    <a href="{% url 'Accion' %}" style="text-decoration: none;">acción</a>
+                {% elif videojuego.genero == "aventura" %}
+                    <a href="{% url 'Aventura' %}" style="text-decoration: none;">aventura</a>
+                {% elif videojuego.genero == "estrategia" %}
+                    <a href="{% url 'Estrategia' %}" style="text-decoration: none;">estrategia</a>
+                {% elif videojuego.genero == "rol" %}
+                    <a href="{% url 'Rol' %}" style="text-decoration: none;">rol</a>
+                {% elif videojuego.genero == "simulacion" %}
+                    <a href="{% url 'Simulacion' %}" style="text-decoration: none;">simulación</a>
+                {% elif videojuego.genero == "otro" %}
+                    <a href="{% url 'Otro' %}" style="text-decoration: none;">otros</a></p>
+                {% endif %}
             {% endfor %}
             </ul>
     {% else %}
